@@ -25,6 +25,7 @@ public class CustomerMBean implements Serializable {
      */
     public CustomerMBean() {
     }
+    
     @EJB
     private CustomerManager customerManager;
     /**
