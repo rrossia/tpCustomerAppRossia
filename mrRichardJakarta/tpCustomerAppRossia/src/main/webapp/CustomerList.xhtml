@@ -9,8 +9,6 @@
     </h:head>
     <h:body>
         <f:view>
-
-
             <h:form>
                 <h1><h:outputText value="List"/></h1>
                 <p:dataTable value="#{customerMBean.customers}" var="item" paginator="true" rows="10"
@@ -20,7 +18,7 @@
                         <f:facet name="header">
                             <h:outputText value="CustomerId"/>
                         </f:facet>
-                        <h:outputText value="#{item.customerId}"/>
+                         <h:link outcome="CustomerDetails?idCustomer=#{item.customerId}" value="#{item.customerId}"/>
                     </p:column>
                     <p:column sortBy="#{item.name}" filterBy="#{item.name}">
                         <f:facet name="header">
@@ -80,14 +78,14 @@
                         <f:facet name="header">
                             <h:outputText value="DiscountCode"/>
                         </f:facet>
-                        <!--h:outputText value="#{item.discountCode}"/-->
+                        <!--h:outputText value="{item.discountCode}"/-->
                         <h:outputText value="#{item.discountCode.discountCode} : #{item.discountCode.rate} %" />
                     </p:column>
                     <!--h:column>
                         <f:facet name="header">
                             <h:outputText value="Zip"/>
                         </f:facet>
-                        <h:outputText value="#{item.zip}"/>
+                        <h:outputText value="{item.zip}"/>
                     </h:column-->
                 </p:dataTable>
             </h:form>
@@ -95,4 +93,6 @@
 
     </h:body>
 </html>
+
+
 
